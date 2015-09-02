@@ -2,7 +2,7 @@
 
 > 目标：准备一个定制的 Python 基础镜像。基础镜像，通常为含最小功能的系统镜像，之后的应用镜像都以此为基础。
 > 
-> 本项目代码维护在 **[DaoCloud/python-image](https://github.com/DaoCloud/python-image)** 项目中。
+> 本项目代码维护在 **[DaoCloud/python-sample-base-image](https://github.com/DaoCloud/python-sample-base-image)** 项目中。
 
 ### 制作基础镜像
 
@@ -97,4 +97,3 @@ WORKDIR /app
 EXPOSE 80
 CMD ["bash"]
 ```
-
