@@ -12,7 +12,7 @@
 FROM ubuntu:trusty
 ```
 
-> 因所有官方镜像均位于境外服务器，为了确保所有示例能正常运行，DaoCloud 提供了一套境内镜像源，并与官方源保持同步。如果使用 DaoCloud 的镜像源，则指向：`FROM daocloud.io/ubuntu:trusty`
+> 因所有官方镜像均位于境外服务器，为了确保所有示例能正常运行，DaoCloud 提供了一套境内镜像源，并与官方源保持同步。如果使用 DaoCloud 的镜像源，则指向：`FROM daocloud.io/ubuntu:trusty`。
 
 设置镜像的维护者，相当于镜像的作者或发行方。
 
@@ -24,7 +24,7 @@ MAINTAINER Captain Dao <support@daocloud.io>
 
 > 安装依赖包相对比较固定，因此该动作应该尽量提前，这样做有助于提高镜像层的复用率。
 > 
-> 安装完依赖后打扫卫生可以显著的减少镜像大小
+> 安装完依赖后打扫卫生可以显著的减少镜像大小。
 
 ``` dockerfile
 RUN apt-get update && \
@@ -34,7 +34,7 @@ RUN apt-get update && \
   	rm -rf /var/lib/apt/lists/*
 ```
 
-> 以下是一个不建议的做法 ， 原因是比上述命令多添加了一层镜像，然而并没有降低总镜像的体积 。 
+> 以下是一个不建议的做法，原因是比上述命令多添加了一层镜像，然而并没有降低总镜像的体积。 
 
 ``` dockerfile
 RUN apt-get update && \
@@ -65,9 +65,9 @@ EXPOSE 80
 CMD ["bash"]
 ```
 
-至此一个 PYTHON 的基础镜像制作完毕，你可以在本地运行 `docker build -t my-python-base .` 来构建出这个镜像并命名为 `my-python-base`。
+至此一个 Python 的基础镜像制作完毕，你可以在本地运行 `docker build -t my-python-base .` 来构建出这个镜像并命名为 `my-python-base`。
 
-PYTHON 家族成员众多 ，因此需要一个通用的基础镜像 ，并在此基础上根据需求进行定制。
+Python 家族成员众多，因此需要一个通用的基础镜像，并在此基础上根据需求进行定制。
 
 > 由于网络环境的特殊情况，在本地运行 `docker build` 的时间会很长，并且有可能失败。推荐使用 **[DaoCloud 加速器](http://help.daocloud.io/intro/accelerator.html)** 和 DaoCloud 的云端 **[代码构建](http://help.daocloud.io/features/build-flows.html)** 功能。
 
