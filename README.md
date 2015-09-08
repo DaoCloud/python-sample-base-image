@@ -34,7 +34,7 @@ RUN apt-get update && \
   	rm -rf /var/lib/apt/lists/*
 ```
 
-> 这是一个错误的做法 ， 并没有降低镜像的体积 。 
+> 以下是一个不建议的做法 ， 原因是比上述命令多添加了一层镜像，然而并没有降低总镜像的体积 。 
 
 ``` dockerfile
 RUN apt-get update && \
