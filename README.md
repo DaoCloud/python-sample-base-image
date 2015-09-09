@@ -15,10 +15,10 @@ FROM ubuntu:trusty
 ```
 
 > 因所有官方镜像均位于境外服务器，为了确保所有示例能正常运行，可以使用与官方镜像保持同步的 DaoCloud 境内镜像：
-
-``` dockerfile
-FROM daocloud.io/ubuntu:trusty
-```
+>
+>``` dockerfile
+>FROM daocloud.io/ubuntu:trusty
+>```
 
 - 设置镜像的维护者，相当于镜像的作者或发行方。
 
