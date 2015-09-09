@@ -41,14 +41,14 @@ RUN apt-get update && \
 ```
 
 > *以下是一个不建议的做法，原因是比上述命令多添加了一层镜像，然而并没有降低总镜像的体积。*
-
-``` dockerfile
-RUN apt-get update && \
-  	apt-get install -y python \
-    				   python-dev \
-                       python-pip 
-RUN rm -rf /var/lib/apt/lists/*
-```
+>
+>``` dockerfile
+>RUN apt-get update && \
+>  	apt-get install -y python \
+>    				   python-dev \
+>                       python-pip 
+>RUN rm -rf /var/lib/apt/lists/*
+>```
 
 - 用 `RUN` 命令调用 `mkdir` 来准备一个干净的放置代码的目录。
 
