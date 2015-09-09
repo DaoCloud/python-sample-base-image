@@ -15,10 +15,10 @@ FROM ubuntu:trusty
 ```
 
 > 因所有官方镜像均位于境外服务器，为了确保所有示例能正常运行，可以使用与官方镜像保持同步的 DaoCloud 境内镜像：
-
-``` dockerfile
-FROM daocloud.io/ubuntu:trusty
-```
+>
+>``` dockerfile
+>FROM daocloud.io/ubuntu:trusty
+>```
 
 - 设置镜像的维护者，相当于镜像的作者或发行方。
 
@@ -41,14 +41,14 @@ RUN apt-get update && \
 ```
 
 > *以下是一个不建议的做法，原因是比上述命令多添加了一层镜像，然而并没有降低总镜像的体积。*
-
-``` dockerfile
-RUN apt-get update && \
-  	apt-get install -y python \
-    				   python-dev \
-                       python-pip 
-RUN rm -rf /var/lib/apt/lists/*
-```
+>
+>``` dockerfile
+>RUN apt-get update && \
+>  	apt-get install -y python \
+>    				   python-dev \
+>                       python-pip 
+>RUN rm -rf /var/lib/apt/lists/*
+>```
 
 - 用 `RUN` 命令调用 `mkdir` 来准备一个干净的放置代码的目录。
 
